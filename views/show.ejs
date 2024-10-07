@@ -1,0 +1,72 @@
+<% layout('/layouts/boilerplate') -%>
+<body>
+  <div class=" col-8 offset-2">
+    <h1><%= obj.title %></h1>
+</div>
+
+   
+    <div class="card"  >
+        <div class="row">
+        <div class="col-5 offset-3 ">
+        <img src="<%=obj.image%>" class="card-img-top img_h" alt=" listing_image">
+        </div>
+      </div>
+      <div class="row">
+        <div class="card-body">
+          <p class="card-text"><b><%= obj.description %></b></p>
+          <p class="card-text"><b><li>&#8377;  <%= obj.price.toLocaleString('en-IN') %></b></p>
+          <p class="card-text"> <b><%= obj.location %></b></p>
+          <p class="card-text">  <br><%= obj.country %></b></p>  
+        </div>
+      </div> 
+    </div>
+   
+    
+
+        <a href="/listing/<%=obj._id%>/edit" class="btn btn-dark">edit</a>
+        <br>
+        <br>
+        <form method="post" action="/listing/<%=obj._id%>/delete?_method=DELETE">
+            <button class="btn btn-dark mb-3">delete</button>
+        </form>
+        <hr>
+      <div class=" col-8 offset-2">
+        <h4>Leave a Review</h4>
+    <form method="post" action="/listing/<%= obj._id%>/review"  class="needs-validation" novalidate>
+       
+         <div>
+          <label for="Rating">Rate</label>
+          <input type="range" min="1" max="5" id="Rating" name="Review[rating]" class="form-range" required>
+        </div>
+        <div>
+          <label for="comment" class="mb-3"><b>Comment</b></label>
+          <textarea name="Review[comment]" id="comment" rows="5" cols="30" class="form-control" required></textarea >
+            <div class="invalid-feedback">
+             add comment!
+          </div>
+
+        </div>
+        <button class="btn btn-dark mb-3 mt-3">save</button>
+    </form>
+      <div class="row">
+        <h4>All Review</h4>
+       
+        <% for(r of obj.review) {%>
+          <div class="card col-5 mb-1 mt-1 ms-1">
+            <div class="card-body">
+             <p><%= r.comment%></p>
+             <p><%= r.rating %> star</p>
+            
+             <form  method="POST" action="/listing/<%= obj._id %>/review/<%= r._id %>?_method=DELETE">
+              <button class="btn btn-dark btn-sm  BTN"> delete</button>
+             </form>
+            
+          </div>
+         
+        </div>
+        <% } %>
+       
+    </div>
+      </div>  
+</ul>
+</body>

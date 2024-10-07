@@ -1,0 +1,86 @@
+body{
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.navbar{
+    height:5rem;
+    background-color: white;
+}
+.navbar-brand{
+ color:#fe424d !important;
+ font-size: 30px !important;
+}
+.info{
+    height:7rem;
+    background-color: rgb(179, 172, 172);
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+.social-media-link{
+    width: 100%;
+    text-align: center;
+   
+    
+}
+.social-media-link a{
+  text-decoration: none;
+  color:rgb(22, 20, 20);
+  margin-left: 20px;
+
+}
+.Private{
+    width: 100%;
+    color:rgb(22, 20, 20) ;
+    text-align: center;
+}
+.privacy{
+    width: 100%;
+    color:rgb(22, 20, 20) ;
+    text-decoration: none;
+    text-align: center;
+}
+.privacy a{
+    text-decoration: none;
+    color:rgb(22, 20, 20) ;
+}
+.card-img-top{
+    width:100% !important;
+    border-radius:1rem !important;
+  
+  
+   
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 1rem !important;
+}
+
+.link{
+    text-decoration: none;
+}
+.card-body{
+    line-height: 0.5rem;
+}
+.card-img-overlay{
+    opacity:0;
+    background-color: white;
+}
+.card-img-overlay:hover{
+    opacity:0.2;
+    
+}
+.btn{
+    background-color:#fe424d !important ;
+}
+.container{
+    flex:1;
+}
+footer{
+    width:100%;
+}
+.img_h{
+    height:40vh;
+}
